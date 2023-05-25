@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <v-main>
+      <v-app-bar color="primary">
+        <v-spacer></v-spacer>
+        <router-link v-for="item in items" :key="item.text" :to="item.router">
+            <v-btn>{{item.text}}</v-btn>
+        </router-link>
+        <v-btn icon="mdi-theme-light-dark" @click="toggleTheme"></v-btn>
+      </v-app-bar>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import {useTheme} from 'vuetify'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+
+  setup(){
+    const theme = useTheme();
+
+    return {
+      theme,
+      toggleTheme:() => theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark' 
+    }
+  },
+
+  data: () => ({
+    items: [
+        {text: 'A propos', router: "/"},
+        {text: 'Expérience', router: "/experience"},
+        {text: 'Contact', router: "/contact"},
+        ]
+  }),
+
+
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
