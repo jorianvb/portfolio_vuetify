@@ -4,7 +4,7 @@
   <v-container>
     <v-row justify="center">
       <p>
-        Je m'appelle Valérian, j'ai 27 ans et je suis développeur spécialisé en
+        Je m'appelle Valérian, j'ai 29 ans et je suis développeur spécialisé en
         ingénieurie des systèmes d'informations. Ce projet à pour but de me
         présenter à vous, et pour moi de découvrir le monde fabuleux de Vue3.
         <br />
@@ -27,6 +27,7 @@
 
   
   <h2>Mes technologies</h2>
+  <v-container>
   <template v-for="technology in technologies" :key="technology.name">
     <v-hover>
       <template v-slot:default="{ isHovering, props }">
@@ -48,6 +49,7 @@
       </template>
     </v-hover>
   </template>
+  </v-container>
 </template>
 
 <script>
