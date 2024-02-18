@@ -32,7 +32,10 @@
 
 export default {
   name: 'ExperienceComponent',
-
+  setup(){
+    document.title = "Mes expériences"
+    return {}
+  },
   data : () => ({
     experience : [
       {

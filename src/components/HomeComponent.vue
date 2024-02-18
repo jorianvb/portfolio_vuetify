@@ -55,7 +55,10 @@
 <script>
 export default {
   name: "HomeComponent",
-
+  setup(){
+    document.title = "A propos"
+    return {}
+  },
   data: () => ({
     technologies: [
       {

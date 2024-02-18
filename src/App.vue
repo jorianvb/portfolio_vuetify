@@ -4,7 +4,7 @@
       <v-app-bar color="primary">
         <v-spacer></v-spacer>
         <router-link v-for="item in items" :key="item.text" :to="item.router">
-            <v-btn>{{item.text}}</v-btn>
+            <v-btn color="dark">{{item.text}}</v-btn>
         </router-link>
         <v-btn icon="mdi-theme-light-dark" @click="toggleTheme"></v-btn>
       </v-app-bar>
@@ -25,7 +25,7 @@ export default {
 
     return {
       theme,
-      toggleTheme:() => theme.global.name.value = theme.global.current.value.dark ? 'myCustomLightTheme' : 'dark' 
+      toggleTheme:() => theme.global.name.value = theme.global.current.value.dark ? 'myCustomLightTheme' : 'myCustomDarkTheme' 
     }
   },
 

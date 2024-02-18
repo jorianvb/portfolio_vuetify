@@ -14,10 +14,11 @@ const myCustomLightTheme = {
     'surface-light': '#EEEEEE',
     'surface-variant': '#424242',
     'on-surface-variant': '#EEEEEE',
-    primary: '#1379FC',
+    primary: '#79B4FF',
     'primary-darken-1': '#1F5592',
     secondary: '#48A9A6',
     'secondary-darken-1': '#018786',
+    'dark': "#000000",
     error: '#B00020',
     info: '#2196F3',
     success: '#4CAF50',
@@ -43,6 +44,27 @@ const myCustomLightTheme = {
   }
 }
 
+const myCustomDarkTheme = {
+  dark: true,
+  colors: {
+    background: '#000000',
+    surface: '#000000',
+    'surface-bright': '#000000',
+    'surface-light': '#EEEEEE',
+    'surface-variant': '#424242',
+    'on-surface-variant': '#EEEEEE',
+    primary: '#FFFFFF',
+    'primary-darken-1': '#1F5592',
+    secondary: '#48A9A6',
+    'secondary-darken-1': '#018786',
+    'dark': "#000000",
+    error: '#B00020',
+    info: '#2196F3',
+    success: '#4CAF50',
+    warning: '#FB8C00',
+  },
+}
+
 export default createVuetify(
   // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
   {
@@ -50,6 +72,7 @@ export default createVuetify(
       defaultTheme: 'myCustomLightTheme',
       themes: {
         myCustomLightTheme,
+        myCustomDarkTheme
       },
     },
   }

@@ -18,7 +18,10 @@
 <script>
 export default {
   name: "ContactComponent",
-
+  setup(){
+    document.title = "Mes contacts"
+    return {}
+  },
   data: () => ({}),
 };
 </script>
