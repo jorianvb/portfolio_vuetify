@@ -4,9 +4,9 @@
       <v-app-bar color="primary">
         <v-spacer></v-spacer>
         <router-link v-for="item in items" :key="item.text" :to="item.router">
-            <v-btn color="dark">{{item.text}}</v-btn>
+            <v-btn color="button-color">{{item.text}}</v-btn>
         </router-link>
-        <v-btn icon="mdi-theme-light-dark" @click="toggleTheme"></v-btn>
+        <v-btn icon="mdi-theme-light-dark" @click="toggleTheme" color="button-color"></v-btn>
       </v-app-bar>
       <router-view></router-view>
     </v-main>
@@ -22,13 +22,13 @@ export default {
 
   setup(){
     const theme = useTheme();
-
+    let colorBtn = 'success'
     return {
       theme,
-      toggleTheme:() => theme.global.name.value = theme.global.current.value.dark ? 'myCustomLightTheme' : 'myCustomDarkTheme' 
+      colorBtn,
+      toggleTheme:() => theme.global.name.value = theme.global.current.value.dark ? 'myCustomLightTheme' : 'myCustomDarkTheme' ,
     }
   },
-
   data: () => ({
     items: [
         {text: 'A propos', router: "/"},

@@ -1,21 +1,26 @@
 <template>
-  <h1>Bienvenue !</h1>
-
+  
   <v-container>
+    <v-row justify="center">
+      <h1>Bienvenue !</h1>
+    </v-row>
     <v-row justify="center">
       <p>
         Je m'appelle Valérian, j'ai 29 ans et je suis développeur spécialisé en
-        ingénieurie des systèmes d'informations. Ce projet à pour but de me
+        ingénierie des systèmes d'informations. Ce projet à pour but de me
         présenter à vous, et pour moi de découvrir le monde fabuleux de Vue3.
         <br />
         Sur ce site, vous allez découvrir mes compétences, mon parcours et mes
         futures projets. N'hésitez pas à me contacter !
       </p>
     </v-row>
+
   </v-container>
 
-  <h2>Mes qualités</h2>
   <v-container>
+    <v-row justify="center">
+      <h2>Mes qualités</h2>
+    </v-row>
     <v-row>
       <v-col align="center" v-for="quality in qualities" :key="quality.name" sm-4
         ><v-icon :icon="quality.icon" color="primary" /> <br />
@@ -26,29 +31,33 @@
   </v-container>
 
   
-  <h2>Mes technologies</h2>
   <v-container>
-  <template v-for="technology in technologies" :key="technology.name">
-    <v-hover>
-      <template v-slot:default="{ isHovering, props }">
-        <v-progress-circular
-          v-bind="props"
-          class="ma-7"
-          size="120"
-          width="10"
-          color="primary"
-          :model-value="technology.percent"
-        >
-          <div v-if="!isHovering">
-            {{ technology.name }}
-          </div>
-          <div v-if="isHovering ">
-            <span>{{ technology.percent }}%</span>
-          </div>
-        </v-progress-circular>
-      </template>
-    </v-hover>
-  </template>
+  <v-row justify="center">
+    <h2>Mes technologies</h2>
+  </v-row>
+  <v-row justify="center">
+    <template v-for="technology in technologies" :key="technology.name">
+      <v-hover>
+        <template v-slot:default="{ isHovering, props }">
+          <v-progress-circular
+            v-bind="props"
+            class="ma-7"
+            size="120"
+            width="10"
+            color="primary"
+            :model-value="technology.percent"
+          >
+            <div v-if="!isHovering">
+              {{ technology.name }}
+            </div>
+            <div v-if="isHovering ">
+              <span>{{ technology.percent }}%</span>
+            </div>
+          </v-progress-circular>
+        </template>
+      </v-hover>
+    </template>
+  </v-row>
   </v-container>
 </template>
 
